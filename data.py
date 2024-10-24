@@ -14,12 +14,38 @@ print(df)
 
 # df['age']=df['age'].fillna(df['age'].mean())
 # print(df)
+
+
 #Median imputation
 # df['age']=df['age'].fillna(df['age'].median())
 # print(df)
+
+
 # Mode imputation
 # df['category']=df['category'].fillna(df['category'].mode()[0])
 # # The result of mode() could be a list (or Series) of one or more values.
 # #  The [0] selects the first mode (i.e., the most frequent value) in case there are multiple modes.
 # # For example, if the modes are ['A', 'B'], df['Category'].mode()[0] will select 'A', which is the first mode in the list
 # print(df)
+
+
+
+
+#Interpolation
+# df['salary']=df['salary'].interpolate(method='linear')
+# print(df)
+
+
+
+#Forward fill and backward fill
+# Forward Fill (fills missing values with the previous non-missing value)
+# df['salary'] = df['salary'].fillna(method='ffill')
+# print(df)
+# Backward Fill (fills missing values with the next non-missing value)
+# df['salary']=df['salary'].fillna(method='bfill')
+# print(df)
+
+
+#removing entire rows
+df=df.dropna()
+print(df)
